@@ -79,3 +79,14 @@ func AddBook(w http.ResponseWriter, r *http.Request){
 	insertBook(book)
 	json.NewEncoder(w).Encode(book)
 }
+func DeleteBook(w http.ResponseWriter,r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
+deleteBook()
+
+}
+func deleteBook(){
+	cur,_:=collection.DeleteMany(context.Background(),bson.D{{}})
+	//handle error
+	fmt.Print(cur.DeletedCount)
+
+}
