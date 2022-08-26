@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"io"
 	"log"
-	"math/rand"
+	// "math/rand"
 	"net/http"
 )
 
@@ -27,7 +27,7 @@ func AddBook(w http.ResponseWriter, r *http.Request){
 	json.Unmarshal(body.Bytes(), &book)
 
 	// Append to the Book mocks
-	book.Id = rand.Intn(100) 
+	// book.Id = rand.Intn(100) 
 	mocks.Books = append(mocks.Books, book)
 
 	// Send a 201 created response
